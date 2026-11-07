@@ -64,3 +64,7 @@ open -n --env MUSCLEOS_DATA_DIR=/tmp/muscleos-test build/MuscleOS.app
 ## 说明
 
 规则（恢复间隔、协同系数、签到判断等）是产品设定，仅供参考，不是医学建议。
+
+## 许可证
+
+MIT，见 [LICENSE](LICENSE)。
