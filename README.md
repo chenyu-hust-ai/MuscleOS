@@ -23,8 +23,12 @@ A native, offline-only strength-training log for macOS, built with SwiftUI.
 
 到 Releases 下载 `MuscleOS-*-macOS.zip`，解压后把 `MuscleOS.app` 拖到「应用程序」。
 
-应用没有经过 Apple 公证，第一次打开会提示「无法验证开发者」：
-在 `MuscleOS.app` 上**右键 → 打开 → 打开**；或到「系统设置 → 隐私与安全性」点「仍要打开」。
+应用没有经过 Apple 公证，第一次打开会提示 Apple 无法验证。点「完成」（不要移到废纸篓），然后：
+
+- 打开「系统设置 → 隐私与安全性」，在「安全性」里点 MuscleOS 旁边的 **仍要打开**，输入密码确认；或者
+- 在终端运行 `xattr -dr com.apple.quarantine /Applications/MuscleOS.app`
+
+只需要放行一次。
 
 ## 从源码构建
 
@@ -59,6 +63,7 @@ open -n --env MUSCLEOS_DATA_DIR=/tmp/muscleos-test build/MuscleOS.app
 | `Sources/Views.swift` / `SetEditor.swift` | 主框架、训练详情、录入窗口 |
 | `Sources/Recovery.swift` / `Today.swift` | 恢复签到、今日页 |
 | `Sources/Importer.swift` / `DataPage.swift` | 导入导出、数据与备份页 |
+| `tools/make_icon.swift` | 生成应用图标（白底、倾斜杠铃片、上升折线） |
 | `docs/PROJECT_MEMORY.md` | 产品规则、设计约定、已做和待做（给后续开发和 AI 助手看） |
 
 ## 说明
